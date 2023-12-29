@@ -6,18 +6,18 @@ class OBJECT_PT_slice_direction_type(bpy.types.Panel):
     bl_space_type = 'VIEW_3D'
     bl_region_type = 'UI'
     bl_category = "Slicer"
-    bl_label="Slice Direction"
+    bl_label="Slice Type"
     bl_parent_id="OBJECT_PT_slice"
     bl_options={'HIDE_HEADER'}
     
     @classmethod
     def poll(cls, context):
-        return context.object.sceneOptions is not None
+        return context.object.slicer.target is not None and context.object.type == 'MESH' 
         
     def draw(self, context):
         layout = self.layout
         col = layout.column(align=True)
         col.separator()
-        col.label(text="Slice Direction")
-        col.prop(context.object.directionTypes, "directions")
+        col.label(text="Slice Type")
+        col.prop(context.object.slicer, "directions")
         

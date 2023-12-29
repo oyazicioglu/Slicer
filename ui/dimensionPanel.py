@@ -12,13 +12,13 @@ class VIEW3D_PT_dimensions(bpy.types.Panel):
     
     @classmethod
     def poll(cls, context):
-        return context.object.sceneOptions is not None
+        return context.object.slicer is not None and context.object.type == 'MESH' 
         
     def draw(self, context):
-        if context.object.sceneOptions.target:
+        if context.object.slicer.target:
             layout = self.layout
-            dimensionProps = context.object.dimentionOptions
-            dimensionColumn = layout.column(align=True, heading="Plane Dimensions")
+            dimensionProps = context.object.slicer
+            dimensionColumn = layout.column(align=True, heading="Plate Dimensions")
             dimensionColumn.prop(dimensionProps, "width")
             dimensionColumn.prop(dimensionProps, "length")
             dimensionColumn.prop(dimensionProps, "thickness")

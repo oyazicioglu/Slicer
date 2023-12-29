@@ -11,8 +11,7 @@ class SceneCreateOperator(bpy.types.Operator):
     
     def execute(self, context):
         object = context.object
-        sceneOptions = object.sceneOptions
-        sceneOptions.target = context.active_object
+        object.slicer.target = context.active_object
 
         return {'FINISHED'}
     
