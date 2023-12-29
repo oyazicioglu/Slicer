@@ -18,6 +18,9 @@ class OBJECT_PT_slice_direction_type(bpy.types.Panel):
         layout = self.layout
         col = layout.column(align=True)
         col.separator()
-        col.label(text="Slice Type")
+        col.label(text="Slice Type", icon="NODE_SIDE")
         col.prop(context.object.slicer, "directions")
         
+        if(context.object.slicer.directions == 'LINEER'):
+            directionRow = layout.row(heading="Axis")
+            directionRow.prop(context.object.slicer, "directionAxies", expand=True)

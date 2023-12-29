@@ -18,7 +18,8 @@ class VIEW3D_PT_dimensions(bpy.types.Panel):
         if context.object.slicer.target:
             layout = self.layout
             dimensionProps = context.object.slicer
-            dimensionColumn = layout.column(align=True, heading="Plate Dimensions")
+            dimensionColumn = layout.column(align=True)
+            dimensionColumn.label(text="Dimensions", icon="ORIENTATION_GLOBAL")
             dimensionColumn.prop(dimensionProps, "width")
             dimensionColumn.prop(dimensionProps, "length")
             dimensionColumn.prop(dimensionProps, "thickness")

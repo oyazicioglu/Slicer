@@ -1,6 +1,7 @@
 
 import bpy
 
+    
 class Settings(bpy.types.PropertyGroup):
     width: bpy.props.FloatProperty(
         name='Width',
@@ -20,7 +21,8 @@ class Settings(bpy.types.PropertyGroup):
     target: bpy.props.PointerProperty(type=bpy.types.Object, name="target")
 
     directions : bpy.props.EnumProperty(items =[
-        ("NONE", "None", "", 1),
-        ("LINEER", "Lineer", "", 2),
-        ("RADIAL", "Radial", "", 3),
-    ], name="", default="NONE", options={'ANIMATABLE'})
+        ("LINEER", "Lineer", "", 1),
+        ("RADIAL", "Radial", "", 2),
+    ], name="", default="LINEER", options={'ANIMATABLE'})
+    
+    directionAxies : bpy.props.EnumProperty(items =(('0','X',''),('1','Y',''),('1','Z','')))

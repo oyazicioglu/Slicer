@@ -11,11 +11,11 @@ bl_info = {
     
 import bpy
 
+from .ui.sliceDirectionPanel import OBJECT_PT_slice_direction_type
 from .settings.settings import Settings
 from .ui.drawPanel import VIEW3D_PT_slicer
 from .operators.sceneCreated import SceneCreateOperator
 from .ui.dimensionPanel import VIEW3D_PT_dimensions
-from .ui.sliceDirectionPanel import OBJECT_PT_slice_direction_type
 
 classes = (
     VIEW3D_PT_slicer,
