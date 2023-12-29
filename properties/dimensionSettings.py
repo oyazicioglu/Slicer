@@ -14,6 +14,6 @@ class DimensionSettings(bpy.types.PropertyGroup):
 
     thickness: bpy.props.FloatProperty(
         name='Thickness',
-        default=1.8 
+        default=18 
     )
     

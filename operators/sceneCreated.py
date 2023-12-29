@@ -10,10 +10,14 @@ class SceneCreateOperator(bpy.types.Operator):
         return context.active_object is not None
     
     def execute(self, context):
-        print(context)
         object = context.object
         sceneOptions = object.sceneOptions
         sceneOptions.target = context.active_object
-        sceneOptions.created = True
 
         return {'FINISHED'}
+    
+def register():
+    bpy.utils.register_class(SceneCreateOperator)
+
+def unregister():
+    bpy.utils.unregister_class(SceneCreateOperator)
